@@ -26,9 +26,11 @@ class models1(APIView):
 
     def get(self, request, pk) :
         print(pk)
+
         genres = pk
         # 전처리 된 db로 바꾸고 all 가져오면
-        data = pd.read_excel(r'C:\Users\82103\movie_2022.xlsx')
+        
+        data = pd.read_excel(r'./djangorest/movie_2022.xlsx')
         movie_2022_drop = data.dropna(axis=0)
         fmovie = pd.DataFrame()
         for g in genres : 
@@ -46,10 +48,10 @@ class models3(APIView):
     import pandas as pd
 
     def get(self, request, pk) :
-        print(pk)
         genres = pk
         # 전처리 된 db로 바꾸고 all 가져오면
-        data = pd.read_excel(r'C:\Users\82103\movie_2022.xlsx')
+        
+        data = pd.read_excel(r'movie_2022.xlsx')
         movie_2022_drop = data.dropna(axis=0)
         fmovie = pd.DataFrame()
         for g in genres : 
